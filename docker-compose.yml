@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: ./api
+    volumes:
+      - ./api:/api
+    tty: true
+    ports:
+      - 8888:8888
+    command: "jupyter-lab --allow-root --ip=0.0.0.0 --port=8888 --no-browser --NotebookApp.token='' --notebook-dir=/api"
